@@ -1,3 +1,3 @@
-# Stage 3 Draft Review Site
+# Proposal Draft Review Site
 
-Generated from artifacts/stage-3 for GitHub Pages review.
+Generated from artifacts/proposal for GitHub Pages review.
