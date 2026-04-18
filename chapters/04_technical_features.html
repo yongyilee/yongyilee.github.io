@@ -3,61 +3,133 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ⅳ. 기술 및 기능 초안 | Stage 3 Draft Review Site</title>
+  <title>Ⅳ. 기술 및 기능 | Stage 3 Draft Review Site</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
   <div class="container">
     <section class="hero">
-      <h1>Ⅳ. 기술 및 기능 초안</h1>
+      <h1>Ⅳ. 기술 및 기능</h1>
       <p>Chapter review page</p>
       <div class="meta">
-        <span class="badge">3 / 6</span>
+        <span class="badge">4 / 7</span>
         <span class="badge"><a style="color:white;text-decoration:underline;" href="../index.html">Back to TOC</a></span>
       </div>
     </section>
     <div class="layout">
       <aside class="panel sidebar">
         <h2>All chapters</h2>
-        <div class="chapter-list"><div class="chapter-card"><strong>Ⅰ. 제안개요 초안 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 초안 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 초안 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 초안 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 초안 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 초안 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
+        <div class="chapter-list"><div class="chapter-card"><strong>요구사항-본문 매핑 요약 </strong><small><a href="00_requirement_body_coverage.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅰ. 제안개요 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
       </aside>
       <main class="panel content">
         <article>
           <div class="nav-row"><a class="button" href="../index.html">TOC</a><a class="button" href="03_strategy_and_methodology.html">Previous</a><a class="button" href="05_performance_and_quality.html">Next</a></div>
-          <h1>Ⅳ. 기술 및 기능 초안</h1>
-<h2>1) 기술 구현의 기본 원칙</h2>
+          <h1>Ⅳ. 기술 및 기능</h1>
+<h2>1. 기술 구현의 전반 구조</h2>
+<p>
+이 장은 실제 시스템이 어떤 기능으로 구성되고, 어떤 데이터와 인터페이스를 통해 동작하는지 설명한다. 기능은 단순 목록이 아니라, 수속단계 정의 → 실시간 산출 → 혼잡도 판단 → 예측 → API/대시보드/리포트/맞춤형 안내로 이어지는 흐름으로 서술한다. 기능별 설명은 반드시 RFP 기능 요구사항과 연결되며, 새로 만든 주장이나 수치는 Stage 2.5 승인 없이 사용하지 않는다.
+</p>
+<h2>2. 기능별 상세 서술</h2>
+<h3>2.1 국제선 수속단계 정의 및 관리 (SFR-001)</h3>
+<p>
+국제선 수속단계는 공항별 운영 환경에 따라 단계와 예외 규칙이 다르므로, 공통 단계 프레임과 공항별 단계 정의를 분리해 관리한다. 제안서는 표준 단계 정의, 예외 단계 등록, 단계별 관리항목, 변경 이력 관리 방식을 함께 제시해야 한다.
+</p>
+<h3>2.2 단계별 실시간 소요시간 산출 (SFR-002)</h3>
+<p>
+실시간 소요시간은 체크인, 보안검색, 출국심사, 탑승구 이동 등 단계별로 산출되며, 데이터 지연·누락·이상치에 대비한 전처리와 대체 산정 규칙이 필수다.
+</p>
+<h3>2.3 단계별 혼잡도 산출 및 등급화 (SFR-003)</h3>
+<p>
+혼잡도는 단순 체감치가 아니라 운영자가 이해할 수 있는 등급 체계로 정의해야 한다. 기준값, 경보 기준, 단계별 표시 방식, 운영자 화면 반영 방식을 함께 적는다.
+</p>
+<h3>2.4 AI 기반 소요시간 및 혼잡도 예측 (SFR-004)</h3>
+<p>
+예측 모델은 국제선 유형·환경별 데이터 테이블, 항공편 스케줄, 시간대, 요일, 예상 승객수, 기상, 공항별 운영특성을 반영해야 한다. 본문에서는 모델명보다 입력 특성, 검증 프레임, 오차 분석, 운영 적합성 평가에 초점을 둔다.
+</p>
+<h3>2.5 API 개발 및 서비스 노출 (SFR-005)</h3>
+<p>
+API는 내부 운영 시스템과 외부 서비스가 공유할 수 있도록 설계하되, 제공 가능 항목, 인증, 권한, 상태코드, 에러 응답을 먼저 정의한다.
+</p>
+<h3>2.6 운영자용 대시보드 (SFR-006)</h3>
+<p>
+운영자 화면은 실시간 상태, 예측, 경보, 정합성 이슈, 공항별 예외를 동시에 볼 수 있어야 한다.
+</p>
+<h3>2.7 통계 분석 및 리포트 (SFR-007)</h3>
+<p>
+리포트는 서비스 운영 현황, 오차 추이, 예외 발생률, 공항별 특이사항, 개선 과제를 정리하는 형태로 설계한다.
+</p>
+<h3>2.8 이용객 맞춤형 안내 (SFR-008)</h3>
+<p>
+이용객 조건에 따라 수속 소요시간과 혼잡도 안내를 개인화할 수 있어야 한다. 다만 개인정보 활용과 비식별 기준은 보안 장과 함께 설명한다.
+</p>
+<h2>3. 데이터 연계와 시스템 구성</h2>
+<h3>3.1 데이터 소스</h3>
+<p>
+데이터 소스는 체크인, CUTE/CUPPS, 보안검색기록관리, iFIS, A-CDM, LiDAR 등 RFP에 명시된 후보군을 기준으로 정리한다. 공항별 실제 가용성은 다르므로 후보군과 실제 연계 확정값을 구분해야 한다. (DAR-001~DAR-006, EV-07, EV-13)
+</p>
+<h3>3.2 시스템 장비와 소프트웨어 구성 (ECR-001~ECR-003)</h3>
 <ul>
-<li>기능은 단순 나열이 아니라, 수속단계 정의 → 실시간 산출 → 혼잡도 판단 → 예측 → API/대시보드/리포트/맞춤형 안내로 이어지는 하나의 흐름으로 설명한다.</li>
-<li>기능별 설명은 모두 RFP 기능 요구사항과 연결한다.</li>
-<li>새로운 대외 주장이나 수치가 필요한 경우에는 Stage 2.5 승인 여부를 먼저 확인한다.</li>
+<li>기존 인프라 활용 및 설치환경 구성</li>
+<li>추가 인프라 구축 및 설치 요건</li>
+<li>데이터 연계 서비스를 위한 S/W 구성</li>
 </ul>
-<h2>2) 기능 구성</h2>
+<p>
+이 3개 요구는 하나의 장에서 분리되지 않고, 아키텍처 그림과 함께 설명하는 것이 좋다.
+</p>
+<h3>3.3 인터페이스 요구사항 (INR-001~INR-004)</h3>
 <ul>
-<li>국제선 수속단계 정의 및 관리: 단계와 예외규칙을 공항별로 설정할 수 있는 구조를 설명한다. (SFR-001)</li>
-<li>단계별 실시간 소요시간 산출: 입력 데이터의 지연, 누락, 이상치에 대응하는 전처리와 대체 산정 규칙을 포함한다. (SFR-002)</li>
-<li>단계별 혼잡도 산출 및 등급화: 운영 상태를 안내 가능한 수준으로 분류하는 논리를 제시한다. (SFR-003)</li>
-<li>AI 기반 소요시간 및 혼잡도 예측: 시간대, 요일, 항공편 스케줄, 예상 승객수, 기상, 공항별 운영특성을 반영한다. (SFR-004)</li>
-<li>소요시간 및 혼잡도 API 개발: 외부 연계와 내부 조회를 위한 인터페이스를 정의한다. (SFR-005)</li>
-<li>운영자용 현황·예측 대시보드: 현장 운영자가 실시간 상태와 예측을 함께 볼 수 있게 한다. (SFR-006)</li>
-<li>통계 분석 및 리포트: 운영 개선과 사후 검증을 위한 리포팅 체계를 제공한다. (SFR-007)</li>
-<li>이용객 맞춤형 안내: 이용객 조건에 따라 안내를 개인화할 수 있도록 한다. (SFR-008)</li>
+<li>공통 사용자 인터페이스</li>
+<li>내부 시스템 연계</li>
+<li>외부 서비스/Open API 연계</li>
+<li>연계 데이터 정합성 확보</li>
 </ul>
-<h2>3) 데이터와 연계</h2>
+<p>
+이 항목은 기능 장에서 표로 정리하고, Ⅴ장 품질 장에서 검증 체계를 붙여야 한다.
+</p>
+<h2>4. 공항별 적용 논리</h2>
 <ul>
-<li>데이터 소스는 체크인, CUTE/CUPPS, 보안검색기록관리, iFIS, A-CDM, LiDAR 등 RFP에 명시된 후보군을 기준으로 정리한다.</li>
-<li>데이터 연계 가능성은 공항별로 다르므로, 기능 설명에서도 공항별 가용성과 예외를 분리해서 쓴다.</li>
-<li>외부 연계 범위는 보안·개인정보·IP 조건과 결합해 설명한다.</li>
+<li>김포(GMP): 국내선 실적을 무리하게 국제선으로 일반화하지 않고, 공항별 운영환경 차이와 검증 방식만 설명한다.</li>
+<li>김해(PUS): LiDAR가 존재하므로 기술 검증의 reference anchor로 사용한다.</li>
+<li>제주(CJU), 대구(TAE), 청주(CJJ): 실제 연계 가능 데이터원과 수동실측 기반 검증을 우선하며, 미확정 데이터는 보류로 둔다.</li>
 </ul>
-<h2>4) 인터페이스 원칙</h2>
+<h2>5. 기능-요구사항 매핑표</h2>
+<p>
+| 기능 | 대응 요구사항 |
+<br>
+| --- | --- |
+<br>
+| 수속단계 정의/관리 | SFR-001 |
+<br>
+| 실시간 소요시간 산출 | SFR-002 |
+<br>
+| 혼잡도 등급화 | SFR-003 |
+<br>
+| AI 예측 | SFR-004 |
+<br>
+| API | SFR-005 |
+<br>
+| 운영자 대시보드 | SFR-006 |
+<br>
+| 통계/리포트 | SFR-007 |
+<br>
+| 맞춤형 안내 | SFR-008 |
+<br>
+| 데이터 표준/정제/비식별/암호화/연계 | DAR-001~DAR-006 |
+<br>
+| 내부/외부 인터페이스 | INR-001~INR-004 |
+<br>
+| 시스템 구성 | ECR-001~ECR-003 |
+</p>
+<h2>6. 권장 도식</h2>
 <ul>
-<li>내부 시스템 연계와 외부 서비스/Open API 연계는 향후 확장 가능 구조를 중심으로 서술한다.</li>
-<li>즉시 대외개방 범위를 확정하는 표현은 피하고, 제공 가능 항목과 권한·인증·상태코드 정의가 선행되어야 함을 명시한다.</li>
-<li>연계 데이터 정합성 확보는 기능이자 품질 요구사항으로 함께 다룬다.</li>
+<li>도식 1: End-to-end service architecture</li>
+<li>도식 2: 인터페이스 맵</li>
+<li>도식 3: 공항별 데이터 가용성 맵</li>
 </ul>
-<h2>5) 표준 문장 초안</h2>
+<h2>7. 본문용 문장 예시</h2>
 <ul>
-<li>&quot;국제선 소요시간 안내서비스는 공항별 데이터 가용성과 운영환경 차이를 반영하는 공통 데이터 표준 위에서 단계별 실시간 안내와 예측 기능을 제공한다.&quot;</li>
-<li>&quot;김해공항 LiDAR 실적은 기능 자체의 보편성을 주장하기 위한 근거가 아니라, 검증 방법론의 reference proof anchor로 제한적으로 활용한다.&quot;</li>
+<li>“국제선 소요시간 안내서비스는 공항별 데이터 가용성과 운영환경 차이를 반영하는 공통 데이터 표준 위에서 단계별 실시간 안내와 예측 기능을 제공한다.”</li>
+<li>“API와 대시보드는 기능 구현과 동시에 운영 적합성을 검증할 수 있는 형태로 설계한다.”</li>
 </ul>
           <p class="footer-note">Use the previous/next links to move between chapters.</p>
         </article>

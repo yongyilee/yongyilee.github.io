@@ -3,59 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ⅰ. 제안개요 초안 | Stage 3 Draft Review Site</title>
+  <title>Ⅰ. 제안개요 | Stage 3 Draft Review Site</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
   <div class="container">
     <section class="hero">
-      <h1>Ⅰ. 제안개요 초안</h1>
+      <h1>Ⅰ. 제안개요</h1>
       <p>Chapter review page</p>
       <div class="meta">
-        <span class="badge">1 / 6</span>
+        <span class="badge">2 / 7</span>
         <span class="badge"><a style="color:white;text-decoration:underline;" href="../index.html">Back to TOC</a></span>
       </div>
     </section>
     <div class="layout">
       <aside class="panel sidebar">
         <h2>All chapters</h2>
-        <div class="chapter-list"><div class="chapter-card"><strong>Ⅰ. 제안개요 초안 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 초안 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 초안 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 초안 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 초안 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 초안 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
+        <div class="chapter-list"><div class="chapter-card"><strong>요구사항-본문 매핑 요약 </strong><small><a href="00_requirement_body_coverage.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅰ. 제안개요 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
       </aside>
       <main class="panel content">
         <article>
-          <div class="nav-row"><a class="button" href="../index.html">TOC</a><a class="button" href="03_strategy_and_methodology.html">Next</a></div>
-          <h1>Ⅰ. 제안개요 초안</h1>
-<h2>1) 제안 배경과 문제 정의</h2>
+          <div class="nav-row"><a class="button" href="../index.html">TOC</a><a class="button" href="00_requirement_body_coverage.html">Previous</a><a class="button" href="03_strategy_and_methodology.html">Next</a></div>
+          <h1>Ⅰ. 제안개요</h1>
+<h2>1. 사업 배경과 목적</h2>
+<p>
+본 사업은 김포·김해·제주·대구·청주 5개 공항을 대상으로 국제선 수속구간별 소요시간과 혼잡도를 실시간·예측 기반으로 안내하는 서비스를 구축하는 과제다. 본 제안은 단일 평균값이 아니라 공항별 운영환경과 데이터 가용성 차이를 반영한 validation logic을 통해 현장 적용성을 확보하는 데 목적이 있다. 사업 목적은 AI·데이터 기반 국제선 수속 안내를 통해 이용객 편의, 공항 운영 효율, 현장 의사결정 지원을 동시에 달성하는 것이다. (CNR-001, CNR-002, CNR-004)
+</p>
+<h2>2. 제안의 핵심 주장</h2>
 <ul>
-<li>본 사업은 김포·김해·제주·대구·청주 5개 공항을 대상으로 국제선 수속구간별 소요시간과 혼잡도를 안내하는 서비스를 구축하는 과제다.</li>
-<li>제안의 출발점은 공항별 운영환경이 서로 다르며, 단일 기준의 일괄 적용이 아니라 공항별 validation logic이 필요하다는 점이다.</li>
-<li>따라서 본 제안서는 &quot;RFP-first spine + proof layer&quot;를 기본 구조로 두고, 평가항목 정렬과 증거 추적성을 함께 확보한다.</li>
+<li>국제선 수속단계별 실시간 소요시간·혼잡도·예측을 하나의 서비스 체계로 제공한다. (SFR-002, SFR-003, SFR-004)</li>
+<li>제안 구조는 RFP-first spine + proof layer를 따른다.</li>
+<li>5개 공항은 모두 별도 validation logic을 가지며, 김해공항 LiDAR는 전 공항 공통 baseline이 아니라 제한적 reference proof anchor로만 사용한다. (CNR-003, EV-05, EV-16, EV-17)</li>
+<li>데이터·보안·품질·테스트는 초기 설계 단계에서 함께 잠그고, 약한 근거는 공통 메시지로 승격하지 않는다. (EV-08, EV-10, EV-12, EV-14, EV-18)</li>
 </ul>
-<h2>2) 제안의 핵심 메시지</h2>
-<ul>
-<li>핵심 메시지는 국제선 수속단계별 실시간 소요시간, 혼잡도, 예측값을 하나의 서비스 체계로 묶어 제공한다는 것이다. (S-01)</li>
-<li>제안 구조는 RFP 요구를 먼저 정렬한 뒤, 각 주장마다 근거와 적용 범위를 붙이는 proof layer 방식으로 설계한다. (S-02)</li>
-<li>5개 공항은 모두 별도 validation logic을 가지며, 김해공항 LiDAR는 공통 baseline이 아니라 제한적 reference proof anchor로만 사용한다. (S-03, S-04)</li>
-<li>데이터·보안·품질·테스트는 초기 설계 단계에서 함께 잠그고, 약한 근거는 공통 메시지로 승격하지 않는다. (S-05)</li>
-</ul>
-<h2>3) 제안 범위</h2>
-<ul>
-<li>본문은 RFP 권장 목차에 맞춰 전략, 기술, 품질, 프로젝트 관리, 프로젝트 지원으로 이어지는 구조를 따른다.</li>
-<li>본 초안은 제안사 일반현황과 기타 항목을 제외하고, 실제 기술 제안의 본체가 되는 장만 먼저 작성한다.</li>
-<li>모든 주장과 문장은 Stage 1~2.5에서 고정한 claim/evidence ledger와 대응해야 한다.</li>
-</ul>
-<h2>4) 차별화 포인트</h2>
-<ul>
-<li>공항별 운영 차이를 무시하지 않고, 공항별 validation card를 통해 각 공항의 데이터 가용성과 예외 규칙을 분리해서 설명한다.</li>
-<li>김해공항의 LiDAR 실적은 단순 홍보 문구가 아니라 검증 방법론의 anchor로 제한적으로 사용한다.</li>
-<li>성능 수치는 임의로 제시하지 않고, 검증 체계와 운영 적합성 중심의 서술로 신뢰도를 만든다.</li>
-</ul>
-<h2>5) 본문 작성 원칙</h2>
+<h2>3. 제안 범위와 제외 범위</h2>
+<p>
+이 본문은 실제 공공제안서의 본체만 다룬다. 따라서 제안사 일반현황(Ⅱ장)과 기타(Ⅷ장)는 이번 초안에서 제외한다. 본문은 전략, 기술, 성능·품질, 프로젝트 관리, 프로젝트 지원으로 구성되며, 각 장은 본문-요구사항 매핑이 가능해야 한다.
+</p>
+<h2>4. 작성 원칙</h2>
 <ul>
 <li>승인된 claim만 사용한다.</li>
 <li>Hold / Quarantine claim은 본문 공통 메시지에 넣지 않는다.</li>
-<li>본문과 발표자료는 동일한 ledger를 공유한다.</li>
-<li>익명평가, 분량, 보안 제약은 작성 초기부터 반영한다.</li>
+<li>본문과 발표자료는 동일한 claim/evidence ledger를 공유한다.</li>
+<li>익명평가, 분량, 보안 제약은 작성 초기에 반영한다.</li>
+</ul>
+<h2>5. 차별화 포인트</h2>
+<p>
+공항별 운영 차이를 뭉개지 않고 validation card로 분리해 설명한다. 김해공항 LiDAR 실적은 홍보 문구가 아니라 검증 방법론의 anchor로 제한적으로 사용한다. 성능 수치의 과장보다 검증 체계와 운영 적합성, 실패 시 fail-closed 구조를 강조해 공공사업 심사에서의 신뢰도를 높인다.
+</p>
+<h2>6. 권장 도식 / 표</h2>
+<ul>
+<li>도식 1: 제안 구조도 — RFP traceability → claim/evidence ledger → 공항별 validation card → 본문/요약서</li>
+<li>도식 2: 5개 공항 비교 개념도 — 동일 spine 위에 공항별 validation path 분기</li>
+<li>표 1: 본문 장별 책임-요구사항 매핑표</li>
+<li>표 2: 공통 메시지 vs 공항별 validation 구분표</li>
 </ul>
           <p class="footer-note">Use the previous/next links to move between chapters.</p>
         </article>

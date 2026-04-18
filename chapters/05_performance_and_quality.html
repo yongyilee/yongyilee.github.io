@@ -3,58 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ⅴ. 성능 및 품질 초안 | Stage 3 Draft Review Site</title>
+  <title>Ⅴ. 성능 및 품질 | Stage 3 Draft Review Site</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
   <div class="container">
     <section class="hero">
-      <h1>Ⅴ. 성능 및 품질 초안</h1>
+      <h1>Ⅴ. 성능 및 품질</h1>
       <p>Chapter review page</p>
       <div class="meta">
-        <span class="badge">4 / 6</span>
+        <span class="badge">5 / 7</span>
         <span class="badge"><a style="color:white;text-decoration:underline;" href="../index.html">Back to TOC</a></span>
       </div>
     </section>
     <div class="layout">
       <aside class="panel sidebar">
         <h2>All chapters</h2>
-        <div class="chapter-list"><div class="chapter-card"><strong>Ⅰ. 제안개요 초안 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 초안 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 초안 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 초안 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 초안 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 초안 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
+        <div class="chapter-list"><div class="chapter-card"><strong>요구사항-본문 매핑 요약 </strong><small><a href="00_requirement_body_coverage.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅰ. 제안개요 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
       </aside>
       <main class="panel content">
         <article>
           <div class="nav-row"><a class="button" href="../index.html">TOC</a><a class="button" href="04_technical_features.html">Previous</a><a class="button" href="06_project_management.html">Next</a></div>
-          <h1>Ⅴ. 성능 및 품질 초안</h1>
-<h2>1) 작성 원칙</h2>
+          <h1>Ⅴ. 성능 및 품질</h1>
+<h2>1. 작성 원칙</h2>
+<p>
+이 장은 숫자를 과장하는 장이 아니라, 성능 목표를 검증 가능한 형태로 정의하고 품질 체계를 설계하는 장이다. 정량 수치는 Stage 2.5에서 승인된 것만 사용하고, 승인되지 않은 목표치는 쓰지 않는다. 성능 검증은 실측과 예측의 비교, 오차 분석, 운영 적합성 평가, 예외 처리 체계까지 포함한다.
+</p>
+<h2>2. 성능 요구사항 대응</h2>
+<h3>2.1 응답시간 및 처리성능 (PER-001)</h3>
+<p>
+응답시간과 처리성능은 시스템 아키텍처, 연계 구조, 데이터 처리 파이프라인의 관점에서 설명한다. 평균값만 말하지 말고 운영 상황에 따라 달라지는 처리 경로와 병목 가능성을 함께 서술한다.
+</p>
+<h3>2.2 실시간 산출 정확도 및 AI 예측 활용성 (PER-002)</h3>
+<p>
+실시간 산출 정확도와 AI 예측 활용성은 공항별 검증과 운영 상황에 따라 다르므로 단일 공통 수치로 제시하지 않는다. 대신 오차 분석, 실측-예측 비교, 운영 적합성, 대체 검증 시나리오를 제안서에 넣는다.
+</p>
+<h2>3. 검증 체계</h2>
 <ul>
-<li>이 장은 숫자를 과장하는 장이 아니라, 검증 방법과 품질 관리 체계를 설계하는 장으로 작성한다.</li>
-<li>정량 수치는 Stage 2.5에서 승인된 것만 사용하고, 승인되지 않은 목표치는 쓰지 않는다.</li>
-<li>성능 검증은 실측과 예측의 비교, 오차 분석, 운영 적합성 평가, 예외 처리 체계까지 포함한다.</li>
+<li>TER-001: 테스트 계획 수립 및 환경 구축</li>
+<li>TER-002: AI 예측 정확도 검증 및 운영 적합성 평가</li>
+<li>TER-003: 성능테스트 및 사용자 검증</li>
+<li>EV-10~EV-12: 실측값과 예측값 비교, 현장 정합성, 외부기관 데이터 지연/제한 시 대체 기준</li>
 </ul>
-<h2>2) 성능 서술 방향</h2>
+<p>
+이 세 가지 테스트는 설계-검증-재검증의 순환 구조로 묶어야 한다.
+</p>
+<h2>4. 품질관리 체계</h2>
+<p>
+품질관리 체계는 기능 구현 정확성, 데이터 품질, 문서화, 이슈 추적, 변경관리, 재검증 순서로 설명한다. 데이터 전처리 기준, 이상치/누락 대응, 로그와 검증 이력, 공항별 예외 처리, 재검증 트리거, 제출 전 최종 품질 점검을 포함해야 한다.
+</p>
+<h2>5. 보안, 개인정보, IP 품질 조건</h2>
+<p>
+보안 요구사항은 품질과 분리되지 않는다. 데이터 암호화, 비식별 처리, 처리 이력 관리, 외부 공개 범위 제어, Open API 권한/인증 정의를 함께 기술해야 한다. 공개 범위를 확정하는 표현은 피하고, 공사 정보보안과 개인정보보호 원칙을 선행 조건으로 둔다. (SER-001~SER-004, EV-14, EV-15)
+</p>
+<h2>6. 성능-검증 매핑표</h2>
+<p>
+| 항목 | 검증 방식 | 대응 요구사항 |
+<br>
+| --- | --- | --- |
+<br>
+| 응답시간 | 아키텍처/운영 경로 기반 검증 | PER-001, TER-003 |
+<br>
+| 산출 정확도 | 실측-예측 비교, 오차 분석 | PER-002, TER-002 |
+<br>
+| 데이터 정합성 | 현장 비교, 대체 기준 | EV-10, EV-11, EV-12 |
+<br>
+| 보안/비식별 | 정책 준수 점검 | SER-001~SER-004 |
+<br>
+| 품질관리 | 로그, 재검증, 변경관리 | QUR-001~QUR-003 |
+</p>
+<h2>7. 공항별 성능 리스크 표</h2>
+<p>
+| 공항 | 주요 리스크 | 대응 |
+<br>
+| --- | --- | --- |
+<br>
+| 김포 | 표본 편차 | 보수적 검증, 정량 과장 금지 |
+<br>
+| 김해 | 기준 혼동 | LiDAR anchor 역할 제한 |
+<br>
+| 제주 | 계절성 | 계절 조건 별도 기록 |
+<br>
+| 대구 | 데이터 밀도 부족 | 보수적 기준 적용 |
+<br>
+| 청주 | 협의 지연 | 대체 검증 시나리오 사용 |
+</p>
+<h2>8. 권장 도식</h2>
 <ul>
-<li>응답시간 및 처리성능은 시스템 아키텍처와 연동 구조의 관점에서 설명한다. (PER-001)</li>
-<li>실시간 산출 정확도와 AI 예측 활용성은 단일 공통 수치가 아니라 공항별 검증과 운영 상황에 따라 설명한다. (PER-002)</li>
-<li>데이터 결과값과 실제 공항 현장 데이터의 정합성 검증 필요성을 명시한다. (03_Evidence_Bank EV-11)</li>
+<li>Validation pipeline</li>
+<li>Quality gate flow</li>
+<li>Security &amp; anonymization control map</li>
 </ul>
-<h2>3) 검증 체계</h2>
+<h2>9. 본문에서 사용할 문장</h2>
 <ul>
-<li>테스트 계획 수립과 환경 구축을 선행한다. (TER-001)</li>
-<li>AI 예측 정확도 검증과 운영 적합성 평가는 별도 gate로 다룬다. (TER-002)</li>
-<li>성능테스트와 사용자 검증은 현장 사용성을 확인하는 단계로 둔다. (TER-003)</li>
-<li>외부기관 데이터 연계가 지연되거나 제한될 경우 대체 검증 시나리오와 기준을 적용한다. (03_Evidence_Bank EV-12)</li>
-</ul>
-<h2>4) 품질관리</h2>
-<ul>
-<li>데이터 전처리, 대체 산정, 예외 처리, 검증 로그 관리까지 품질 범위에 포함한다.</li>
-<li>품질관리 체계는 기능 구현 정확성, 문서화, 이슈 추적, 변경관리, 재검증 순서로 구성한다.</li>
-<li>weak evidence는 기본값으로 보류하므로, 품질 장에서도 근거 없는 수치 약속은 넣지 않는다.</li>
-</ul>
-<h2>5) 보안과 익명성의 품질 조건</h2>
-<ul>
-<li>데이터 암호화, 비식별 처리, 처리이력 관리는 품질 요구사항의 일부로 설명한다.</li>
-<li>익명평가를 위해 회사 식별정보를 제거하고, 외부 공개 범위를 조심스럽게 제한한다.</li>
-<li>Open API는 구조와 정의를 먼저 두고, 권한/인증/상태코드는 보안 제약과 함께 설명한다.</li>
+<li>“약한 근거는 기본값으로 보류하고, 성능 수치는 승인된 범위 내에서만 제시한다.”</li>
+<li>“실측과 예측의 비교 및 오차 분석 체계를 통해 운영 적합성을 검증한다.”</li>
+<li>“보안과 비식별은 품질관리의 일부로 초기 설계 단계부터 반영한다.”</li>
 </ul>
           <p class="footer-note">Use the previous/next links to move between chapters.</p>
         </article>
