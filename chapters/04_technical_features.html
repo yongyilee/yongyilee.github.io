@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ⅳ. 기술 및 기능 초안 | Stage 3 Draft Review Site</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Ⅳ. 기술 및 기능 초안</h1>
+      <p>Chapter review page</p>
+      <div class="meta">
+        <span class="badge">3 / 6</span>
+        <span class="badge"><a style="color:white;text-decoration:underline;" href="../index.html">Back to TOC</a></span>
+      </div>
+    </section>
+    <div class="layout">
+      <aside class="panel sidebar">
+        <h2>All chapters</h2>
+        <div class="chapter-list"><div class="chapter-card"><strong>Ⅰ. 제안개요 초안 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 초안 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 초안 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 초안 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 초안 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 초안 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
+      </aside>
+      <main class="panel content">
+        <article>
+          <div class="nav-row"><a class="button" href="../index.html">TOC</a><a class="button" href="03_strategy_and_methodology.html">Previous</a><a class="button" href="05_performance_and_quality.html">Next</a></div>
+          <h1>Ⅳ. 기술 및 기능 초안</h1>
+<h2>1) 기술 구현의 기본 원칙</h2>
+<ul>
+<li>기능은 단순 나열이 아니라, 수속단계 정의 → 실시간 산출 → 혼잡도 판단 → 예측 → API/대시보드/리포트/맞춤형 안내로 이어지는 하나의 흐름으로 설명한다.</li>
+<li>기능별 설명은 모두 RFP 기능 요구사항과 연결한다.</li>
+<li>새로운 대외 주장이나 수치가 필요한 경우에는 Stage 2.5 승인 여부를 먼저 확인한다.</li>
+</ul>
+<h2>2) 기능 구성</h2>
+<ul>
+<li>국제선 수속단계 정의 및 관리: 단계와 예외규칙을 공항별로 설정할 수 있는 구조를 설명한다. (SFR-001)</li>
+<li>단계별 실시간 소요시간 산출: 입력 데이터의 지연, 누락, 이상치에 대응하는 전처리와 대체 산정 규칙을 포함한다. (SFR-002)</li>
+<li>단계별 혼잡도 산출 및 등급화: 운영 상태를 안내 가능한 수준으로 분류하는 논리를 제시한다. (SFR-003)</li>
+<li>AI 기반 소요시간 및 혼잡도 예측: 시간대, 요일, 항공편 스케줄, 예상 승객수, 기상, 공항별 운영특성을 반영한다. (SFR-004)</li>
+<li>소요시간 및 혼잡도 API 개발: 외부 연계와 내부 조회를 위한 인터페이스를 정의한다. (SFR-005)</li>
+<li>운영자용 현황·예측 대시보드: 현장 운영자가 실시간 상태와 예측을 함께 볼 수 있게 한다. (SFR-006)</li>
+<li>통계 분석 및 리포트: 운영 개선과 사후 검증을 위한 리포팅 체계를 제공한다. (SFR-007)</li>
+<li>이용객 맞춤형 안내: 이용객 조건에 따라 안내를 개인화할 수 있도록 한다. (SFR-008)</li>
+</ul>
+<h2>3) 데이터와 연계</h2>
+<ul>
+<li>데이터 소스는 체크인, CUTE/CUPPS, 보안검색기록관리, iFIS, A-CDM, LiDAR 등 RFP에 명시된 후보군을 기준으로 정리한다.</li>
+<li>데이터 연계 가능성은 공항별로 다르므로, 기능 설명에서도 공항별 가용성과 예외를 분리해서 쓴다.</li>
+<li>외부 연계 범위는 보안·개인정보·IP 조건과 결합해 설명한다.</li>
+</ul>
+<h2>4) 인터페이스 원칙</h2>
+<ul>
+<li>내부 시스템 연계와 외부 서비스/Open API 연계는 향후 확장 가능 구조를 중심으로 서술한다.</li>
+<li>즉시 대외개방 범위를 확정하는 표현은 피하고, 제공 가능 항목과 권한·인증·상태코드 정의가 선행되어야 함을 명시한다.</li>
+<li>연계 데이터 정합성 확보는 기능이자 품질 요구사항으로 함께 다룬다.</li>
+</ul>
+<h2>5) 표준 문장 초안</h2>
+<ul>
+<li>&quot;국제선 소요시간 안내서비스는 공항별 데이터 가용성과 운영환경 차이를 반영하는 공통 데이터 표준 위에서 단계별 실시간 안내와 예측 기능을 제공한다.&quot;</li>
+<li>&quot;김해공항 LiDAR 실적은 기능 자체의 보편성을 주장하기 위한 근거가 아니라, 검증 방법론의 reference proof anchor로 제한적으로 활용한다.&quot;</li>
+</ul>
+          <p class="footer-note">Use the previous/next links to move between chapters.</p>
+        </article>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

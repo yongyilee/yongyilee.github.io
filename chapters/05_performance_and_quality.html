@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ⅴ. 성능 및 품질 초안 | Stage 3 Draft Review Site</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Ⅴ. 성능 및 품질 초안</h1>
+      <p>Chapter review page</p>
+      <div class="meta">
+        <span class="badge">4 / 6</span>
+        <span class="badge"><a style="color:white;text-decoration:underline;" href="../index.html">Back to TOC</a></span>
+      </div>
+    </section>
+    <div class="layout">
+      <aside class="panel sidebar">
+        <h2>All chapters</h2>
+        <div class="chapter-list"><div class="chapter-card"><strong>Ⅰ. 제안개요 초안 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 초안 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 초안 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 초안 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 초안 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 초안 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
+      </aside>
+      <main class="panel content">
+        <article>
+          <div class="nav-row"><a class="button" href="../index.html">TOC</a><a class="button" href="04_technical_features.html">Previous</a><a class="button" href="06_project_management.html">Next</a></div>
+          <h1>Ⅴ. 성능 및 품질 초안</h1>
+<h2>1) 작성 원칙</h2>
+<ul>
+<li>이 장은 숫자를 과장하는 장이 아니라, 검증 방법과 품질 관리 체계를 설계하는 장으로 작성한다.</li>
+<li>정량 수치는 Stage 2.5에서 승인된 것만 사용하고, 승인되지 않은 목표치는 쓰지 않는다.</li>
+<li>성능 검증은 실측과 예측의 비교, 오차 분석, 운영 적합성 평가, 예외 처리 체계까지 포함한다.</li>
+</ul>
+<h2>2) 성능 서술 방향</h2>
+<ul>
+<li>응답시간 및 처리성능은 시스템 아키텍처와 연동 구조의 관점에서 설명한다. (PER-001)</li>
+<li>실시간 산출 정확도와 AI 예측 활용성은 단일 공통 수치가 아니라 공항별 검증과 운영 상황에 따라 설명한다. (PER-002)</li>
+<li>데이터 결과값과 실제 공항 현장 데이터의 정합성 검증 필요성을 명시한다. (03_Evidence_Bank EV-11)</li>
+</ul>
+<h2>3) 검증 체계</h2>
+<ul>
+<li>테스트 계획 수립과 환경 구축을 선행한다. (TER-001)</li>
+<li>AI 예측 정확도 검증과 운영 적합성 평가는 별도 gate로 다룬다. (TER-002)</li>
+<li>성능테스트와 사용자 검증은 현장 사용성을 확인하는 단계로 둔다. (TER-003)</li>
+<li>외부기관 데이터 연계가 지연되거나 제한될 경우 대체 검증 시나리오와 기준을 적용한다. (03_Evidence_Bank EV-12)</li>
+</ul>
+<h2>4) 품질관리</h2>
+<ul>
+<li>데이터 전처리, 대체 산정, 예외 처리, 검증 로그 관리까지 품질 범위에 포함한다.</li>
+<li>품질관리 체계는 기능 구현 정확성, 문서화, 이슈 추적, 변경관리, 재검증 순서로 구성한다.</li>
+<li>weak evidence는 기본값으로 보류하므로, 품질 장에서도 근거 없는 수치 약속은 넣지 않는다.</li>
+</ul>
+<h2>5) 보안과 익명성의 품질 조건</h2>
+<ul>
+<li>데이터 암호화, 비식별 처리, 처리이력 관리는 품질 요구사항의 일부로 설명한다.</li>
+<li>익명평가를 위해 회사 식별정보를 제거하고, 외부 공개 범위를 조심스럽게 제한한다.</li>
+<li>Open API는 구조와 정의를 먼저 두고, 권한/인증/상태코드는 보안 제약과 함께 설명한다.</li>
+</ul>
+          <p class="footer-note">Use the previous/next links to move between chapters.</p>
+        </article>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

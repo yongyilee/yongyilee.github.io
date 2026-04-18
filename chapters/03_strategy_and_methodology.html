@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ⅲ. 전략 및 방법론 초안 | Stage 3 Draft Review Site</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Ⅲ. 전략 및 방법론 초안</h1>
+      <p>Chapter review page</p>
+      <div class="meta">
+        <span class="badge">2 / 6</span>
+        <span class="badge"><a style="color:white;text-decoration:underline;" href="../index.html">Back to TOC</a></span>
+      </div>
+    </section>
+    <div class="layout">
+      <aside class="panel sidebar">
+        <h2>All chapters</h2>
+        <div class="chapter-list"><div class="chapter-card"><strong>Ⅰ. 제안개요 초안 </strong><small><a href="01_proposal_overview.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅲ. 전략 및 방법론 초안 </strong><small><a href="03_strategy_and_methodology.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅳ. 기술 및 기능 초안 </strong><small><a href="04_technical_features.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅴ. 성능 및 품질 초안 </strong><small><a href="05_performance_and_quality.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅵ. 프로젝트 관리 초안 </strong><small><a href="06_project_management.html">Open chapter</a></small></div><div class="chapter-card"><strong>Ⅶ. 프로젝트 지원 초안 </strong><small><a href="07_project_support.html">Open chapter</a></small></div></div>
+      </aside>
+      <main class="panel content">
+        <article>
+          <div class="nav-row"><a class="button" href="../index.html">TOC</a><a class="button" href="01_proposal_overview.html">Previous</a><a class="button" href="04_technical_features.html">Next</a></div>
+          <h1>Ⅲ. 전략 및 방법론 초안</h1>
+<h2>1) 작성 방향</h2>
+<ul>
+<li>이 장은 제안의 논리 spine을 고정하는 장으로, &quot;무엇을 왜 어떻게 검증할 것인가&quot;를 설명한다.</li>
+<li>Stage 1~2.5에서 고정한 요구사항 추적, evidence admissibility, 공통 spine 수렴 논리를 그대로 반영한다.</li>
+<li>공항별 validation logic은 이 장에서 공통 방법론과 공항별 적용전략으로 분리해 설명한다.</li>
+</ul>
+<h2>2) 방법론 구조</h2>
+<ul>
+<li>요구사항 분해: RFP 평가축을 기능, 성능, 시스템 구성, 인터페이스, 데이터, 테스트, 보안, 품질, 프로젝트 관리, 지원으로 분해한다. (01_RFP_Traceability_Matrix)</li>
+<li>증거 수집: RFP 본문, 씽킹노트, RALPLAN 합의안, Stage 1~2.5 산출물만 근거로 사용한다. (03_Evidence_Bank)</li>
+<li>주장 심사: 각 claim은 source / owner / airport scope / comparator role / anonymity risk / page-budget impact를 기준으로 admissibility를 판단한다. (05_Claim_Admissibility_Register)</li>
+<li>공통 수렴: 각 공항 validation card가 공통 spine의 어떤 claim을 지지하는지 gate로 연결한다. (06_Common_Spine_Convergence_Table)</li>
+</ul>
+<h2>3) 핵심 방법론</h2>
+<ul>
+<li>공통 메시지 spine을 먼저 두고, 공항별 validation은 하위 구조로 둔다.</li>
+<li>김해공항 LiDAR는 source of evidence이자 제한적 benchmark로만 사용하고, 전 공항 공통 baseline으로 일반화하지 않는다.</li>
+<li>약한 근거의 claim은 fail-closed로 quarantine 또는 hold 처리한다.</li>
+<li>본문과 발표자료는 같은 ledger를 공유하므로, 문장 구조와 증거 구조를 같은 체계로 관리한다.</li>
+</ul>
+<h2>4) 공항별 validation logic</h2>
+<ul>
+<li>김포(GMP): 수동실측과 예측 비교를 중심으로 보수적 검증을 적용한다.</li>
+<li>김해(PUS): 수동실측, LiDAR, 티켓데이터의 3중 비교가 가능한 핵심 anchor 공항으로 사용한다.</li>
+<li>제주(CJU): 계절성 및 샘플 편차를 고려한 수동실측 중심 검증을 적용한다.</li>
+<li>대구(TAE): 데이터 밀도 부족 가능성을 전제로 보수적 검증을 적용한다.</li>
+<li>청주(CJJ): 초기 검증 중심으로 운영환경 차이와 외부 협의 범위를 명확히 둔다.</li>
+</ul>
+<h2>5) 게이트와 책임 분리</h2>
+<ul>
+<li>PM은 서사와 우선순위를 조정한다.</li>
+<li>Compliance는 RFP 적합성, 익명성, 분량을 veto할 수 있다.</li>
+<li>Data/AI는 evidence admissibility와 comparator role을 veto할 수 있다.</li>
+<li>이 분리는 과잉 승격과 증거 없는 공통 주장 유입을 막기 위한 장치다.</li>
+</ul>
+          <p class="footer-note">Use the previous/next links to move between chapters.</p>
+        </article>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
